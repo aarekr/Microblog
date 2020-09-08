@@ -1,6 +1,7 @@
 venv
 logs
 migrations
+messages.pot
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
