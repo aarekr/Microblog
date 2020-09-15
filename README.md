@@ -11,6 +11,8 @@ Update your translations with these 3 commands:
 2. pybabel update -i messages.pot -d app/translations
 3. pybabel compile -d app/translations
 
+#### Installing requirements
+pip install -r requirements.txt
 
 #### Database update
 1. flask db migrate -m "description of the change made"
