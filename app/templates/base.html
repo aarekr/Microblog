@@ -26,9 +26,20 @@
                     <li><a href="{{ url_for('login') }}">{{ _('Login') }}</a></li>
                     {% endif %}
                     <li><a href="{{ url_for('explore') }}">{{ _('Explore') }}</a></li>
+                    {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('user', username=current_user.username) }}">{{ _('Profile') }}</a></li>
+                    {% endif %}
                     <li><a href="{{ url_for('logout') }}">{{ _('Logout') }}</a></li>
                 </ul>
+                {% if g.search_form %}
+                <form class="navbar-form navbar-left" method="get"
+                        action="{{ url_for('search') }}">
+                    <div class="form-group">
+                        {{ g.search_form.q(size=20, class='form-control',
+                            placeholder=g.search_form.q.label.text) }}
+                    </div>
+                </form>
+                {% endif %}
             </div>
         </div>
     </nav>
